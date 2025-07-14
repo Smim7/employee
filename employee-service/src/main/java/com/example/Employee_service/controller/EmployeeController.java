@@ -17,6 +17,7 @@ public class EmployeeController {
 @GetMapping("/employees/{id}")
     ResponseEntity<EmployeeResponse> getEmployeetails(@PathVariable("id") int id){
     EmployeeResponse employeeResponse = employeeService.getEmployeeById(id);
+    System.out.println("employeeResponse" + employeeResponse);
     return ResponseEntity.status(HttpStatus.OK).body(employeeResponse);
 
 }

@@ -10,24 +10,24 @@ import org.springframework.web.reactive.function.client.WebClient;
 
 @Configuration
 public class EmployeeAppConfi {
-    @Value("${addressservice.base.url}")
-    private String addressBaseURL;
+//    @Value("${addressservice.base.url}")
+//    private String addressBaseURL;
 
     @Bean
     public ModelMapper modelMapper(){
         return new ModelMapper();
     }
-//    @Bean
-//    public RestTemplate restTemplate(){
-//        return new RestTemplate();
-//   }
     @Bean
-    public WebClient webClient(){
-       return WebClient
-               .builder()
-               .baseUrl(addressBaseURL)
-               .build();
-    }
+    public RestTemplate restTemplate(){
+        return new RestTemplate();
+   }
+//    @Bean
+//    public WebClient webClient(){
+//       return WebClient
+//               .builder()
+//               .baseUrl(addressBaseURL)
+//               .build();
+//    }
 
 
 }
